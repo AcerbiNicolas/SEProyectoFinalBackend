@@ -15,6 +15,7 @@ class Container {
 			console.log(err);
 		}
 	}
+    //Update an object
     update(obj) {
 		try {
 			return this.db.collection('products').update(obj);
