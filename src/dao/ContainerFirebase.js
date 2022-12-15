@@ -15,6 +15,13 @@ class Container {
 			console.log(err);
 		}
 	}
+    update(obj) {
+		try {
+			return this.db.collection('products').update(obj);
+		} catch (err) {
+			console.log(err);
+		}
+	}
 	//Get an object by ID
 	getById(id) {
 		try {
@@ -27,7 +34,7 @@ class Container {
 	//Get all objects
 	getAll() {
 		try {
-			return this.model.find();
+			return this.db.find();
 		} catch (err) {
 			console.log(err);
 		}
@@ -35,7 +42,7 @@ class Container {
 	//Delete one object
 	deleteById(id) {
 		try {
-			return this.model.findByIdAndDelete(id);
+			return this.db.findByIdAndDelete(id);
 		} catch (err) {
 			console.log(err);
 		}
