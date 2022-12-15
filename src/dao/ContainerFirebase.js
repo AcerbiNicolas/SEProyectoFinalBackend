@@ -16,9 +16,9 @@ class Container {
 		}
 	}
     //Update an object
-    update(obj) {
+    update(id, obj) {
 		try {
-			return this.db.collection('products').update(obj);
+			return this.db.doc(`/products/${id}`).update(obj);
 		} catch (err) {
 			console.log(err);
 		}
